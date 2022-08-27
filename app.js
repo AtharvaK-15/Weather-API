@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const https = require("https");
 const bodyParser = require("body-parser");
-port = 3000;
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -32,7 +32,7 @@ app.post("/",function(req,res){
 
 })
 
-
-app.listen(port,function(){
+// process.env.port for heroku working
+app.listen(process.env.PORT || 3000,function(){
     console.log("Server is running on port 3000.");
 })
